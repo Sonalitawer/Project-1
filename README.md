@@ -95,8 +95,48 @@ data.head()
 <br>
 
 data['Gross collection'] = data['Gross collection'].astype('float')
+<br>
 
+cols = data.columns
+<br>
+cols
+<br>
+for col in cols:
+    <br>
+    data[col] = data[col].astype('float')
+<br>
+data.corr()
 
+<br>
+cols = data.columns
+<br>
+cols
+<br>
+for col in cols:
+    <br>
+    data[col] = data[col].replace(0,np.median(data[col]))
+    <br>
+data.head()
+<br>
+
+new_data = data[data['Gross collection']>5]
+<br>
+new_data = new_data.drop('Metascore',axis=1)
+<br>
+#new_data = new_data[new_data['Metascore']>50]
+<br>
+new_data.shape
+
+<br>
+x = data.drop('Gross collection',axis=1)
+<br>
+y = data['Gross collection']
+<br>
+
+info = data.describe()
+<br>
+sns.heatmap(info,annot=True,fmt='.2f')
+<br>
 
 
 
