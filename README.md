@@ -33,5 +33,52 @@ df['Gross collection'] = df['Gross collection'].replace('*****','0')
 <br>
 df.head()
 
+<br>
+cols = df.columns
+<br>
+cols
+<br>
+for col in cols:
+<br>
+    df[col] = df[col].astype('string') 
+    
+<br>
+data = df.copy()
+<br>
+data.head()
+
+<br>
+j = 0
+<br>
+for i in data['Gross collection']:
+<br>
+    if i == '0':
+<br>
+        data['Gross collection'][j] = i
+ <br>
+        j = j+1
+<br>
+    else:
+<br>    
+        n = len(i)
+<br>
+        z = i
+<br>
+        i = i[1:n-1]
+<br>
+        data['Gross collection'][j] = i
+<br>
+        j = j+1
+<br>
+    #df[i] = df[1:n-1]
+<br>
+data.head()
+
+<br>
+
+
+
+
+
 
 
