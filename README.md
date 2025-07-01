@@ -421,3 +421,96 @@ random_grid = {
 <br>
 }
 <br>
+
+from xgboost import XGBRegressor
+<br>
+rfc = XGBRegressor()
+<br>
+forest_params = random_grid
+<br>
+clf = GridSearchCV(rfc, forest_params)
+<br>
+clf.fit(x_train, y_train)
+<br>
+clf.best_estimator_
+<br>
+
+from xgboost import XGBRegressor
+<br>
+model = XGBRegressor(max_delta_step=0, max_depth=10, max_leaves=10, min_child_weight=1)
+<br>
+model = model.fit(x_train,y_train)
+<br>
+ypred = model.predict(x_test)
+<br>
+from sklearn.metrics import mean_absolute_error
+<br>
+print("MAE",mean_absolute_error(y_test,ypred))
+<br>
+from sklearn.metrics import mean_squared_error
+<br>
+print("MSE",mean_squared_error(y_test,ypred))
+<br>
+print("RMSE",(np.sqrt(mean_squared_error(y_test,ypred))))
+<br>
+ypred4 = ypred
+<br>
+from sklearn.metrics import r2_score
+<br>
+print("R2 score:",r2_score(y_test, ypred))
+<br>
+
+sns.scatterplot(x = y_test,y = ypred,color='orange',label='Predicted')
+<br>
+x = np.arange(0,np.max(y_test),0.1)
+<br>
+y = np.arange(0,np.max(y_test),0.1)
+<br>
+sns.lineplot(x=x,y=y,label='Actual')
+<br>
+plt.xlabel("Actual Collection")
+<br>
+plt.ylabel("Predicted Collection")
+<br>
+plt.title('XgBoost Regressor')
+<br>
+plt.show()
+<br>
+
+report1 = pd.DataFrame()
+<br>
+report1['Actual'] = y_test
+<br>
+report1['Predicted'] = ypred1
+<br>
+report1.head()
+<br>
+
+report2 = pd.DataFrame()
+<br>
+report2['Actual'] = y_test
+<br>
+report2['Predicted'] = ypred2
+<br>
+report2.head()
+<br>
+
+report3 = pd.DataFrame()
+<br>
+report3['Actual'] = y_test
+<br>
+report3['Predicted'] = ypred3
+<br>
+report3.head()
+<br>
+
+report4 = pd.DataFrame()
+<br>
+report4['Actual'] = y_test
+<br>
+report4['Predicted'] = ypred4
+<br>
+report4.head()
+<br>
+
+
