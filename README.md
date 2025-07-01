@@ -16,29 +16,24 @@ import seaborn as sns
 df = pd.read_csv('movie.csv')
 <br>
 df.head()
-
-
 <br>
+
 df = df.drop(['Unnamed: 0','Name of movie','Year of relase','Description','Director','Star'],axis=1)
-
-
 <br>
+
 df.head()
-
-
 <br>
+
 df[df['Metascore'] == '^^^^^^']
 <br>
 df['Metascore'] = df['Metascore'].replace('^^^^^^','0')
 <br>
 df['Gross collection'] = df['Gross collection'].replace('*****','0')
-
-
 <br>
+
 df.head()
-
-
 <br>
+
 cols = df.columns
 <br>
 cols
@@ -46,17 +41,14 @@ cols
 for col in cols:
 <br>
     df[col] = df[col].astype('string') 
-
-    
 <br>
+
 data = df.copy()
-
-
 <br>
+
 data.head()
-
-
 <br>
+
 j = 0
 <br>
 for i in data['Gross collection']:
@@ -82,9 +74,8 @@ for i in data['Gross collection']:
     #df[i] = df[1:n-1]
 <br>
 data.head()
-
-
 <br>
+
 j = 0
 <br>
 for i in data['Votes']:
@@ -116,8 +107,8 @@ for col in cols:
     data[col] = data[col].astype('float')
 <br>
 data.corr()
-
 <br>
+
 cols = data.columns
 <br>
 cols
@@ -136,8 +127,8 @@ new_data = new_data.drop('Metascore',axis=1)
 #new_data = new_data[new_data['Metascore']>50]
 <br>
 new_data.shape
-
 <br>
+
 x = data.drop('Gross collection',axis=1)
 <br>
 y = data['Gross collection']
@@ -176,8 +167,8 @@ for col in cols:
     sns.scatterplot(x=x[col],y=y,color='red')
     <br>
     i = i+1
-
 <br>
+
 plt.figure(figsize=(10,10))
 <br>
 #df.columns
@@ -215,8 +206,8 @@ x_test = x[721:800]
 y_test = y[721:800]
 <br>
 from sklearn.linear_model import LinearRegression
-
 <br>
+
 model = LinearRegression()
 <br>
 model = model.fit(x_train,y_train)
@@ -275,8 +266,8 @@ random_grid = {
 'max_depth':max_depth,
 <br>
 }
-
 <br>
+
 from sklearn.ensemble import RandomForestRegressor
 <br>
 rfc = RandomForestRegressor()
@@ -351,8 +342,7 @@ random_grid = {
     'loss':loss,
     <br>
     'learning_rate':learning_rate
-    <br>
-    
+    <br>    
 }
 <br>
 
