@@ -75,6 +75,26 @@ for i in data['Gross collection']:
 data.head()
 
 <br>
+j = 0
+<br>
+for i in data['Votes']:
+<br>
+    n = len(i)
+    <br>
+    z = i
+    <br>
+    i = i.replace(',','')
+    <br>
+    data['Votes'][j] = i
+    <br>
+    j = j+1
+    <br>
+    #df[i] = df[1:n-1]
+    <br>
+data.head()
+<br>
+
+data['Gross collection'] = data['Gross collection'].astype('float')
 
 
 
