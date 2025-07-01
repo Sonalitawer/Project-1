@@ -322,23 +322,16 @@ plt.show()
 <br>
 
 n_estimators=[100,200,300]
-<br>
-learning_rate=np.arange(0.1,1,0.1)
-<br>
-#max_depth = int(max_depth)
-<br>
-loss = ['square','linear']
+<br> learning_rate=np.arange(0.1,1,0.1)
+<br> #max_depth = int(max_depth)
+<br> loss = ['square','linear']
 <br>
 
 random_grid = {
-<br>
-    'n_estimators':n_estimators,
-    <br>
-    'loss':loss,
-    <br>
-    'learning_rate':learning_rate
-    <br>    
-}
+<br> 'n_estimators':n_estimators,
+    <br> 'loss':loss,
+    <br> 'learning_rate':learning_rate
+    <br> }
 <br>
 
 from sklearn.ensemble import AdaBoostRegressor
@@ -397,24 +390,15 @@ plt.show()
 <br>
 
 n_estimators=[100,200,300]
-<br>
-max_depth=[int(x) for x in np.linspace(10,200,50)]
-<br>
-#max_depth = int(max_depth)
-<br>
-learning_rate = np.arange(0.1,1,0.1)
-<br>
-max_leaves = np.arange(10,60,10)
-<br>
-random_grid = {
-<br>
-    'n_estimators':n_estimators,
-    <br>
-    'max_depth':max_depth,
-    <br>
-    'max_leaves':max_leaves
-<br>
-}
+<br> max_depth=[int(x) for x in np.linspace(10,200,50)]
+<br> #max_depth = int(max_depth)
+<br> learning_rate = np.arange(0.1,1,0.1)
+<br> max_leaves = np.arange(10,60,10)
+<br> random_grid = {
+<br> 'n_estimators':n_estimators,
+    <br> 'max_depth':max_depth,
+    <br> 'max_leaves':max_leaves
+<br> }
 <br>
 
 from xgboost import XGBRegressor
