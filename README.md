@@ -2,9 +2,8 @@
 import warnings 
 <br>
 warnings.filterwarnings("ignore")
-
-
 <br>
+
 import numpy as np
 <br>
 import pandas as pd
@@ -12,9 +11,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 <br>
 import seaborn as sns
-
-
 <br>
+
 df = pd.read_csv('movie.csv')
 <br>
 df.head()
