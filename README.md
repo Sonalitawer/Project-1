@@ -256,16 +256,11 @@ from sklearn.model_selection import GridSearchCV
 n_estimators=[100,200,300]
 <br>
 max_depth=[int(x) for x in np.linspace(10,200,50)]
-<br>
-#max_depth = int(max_depth)
-<br>
-random_grid = {
-<br>   
-'n_estimators':n_estimators,
-<br>   
-'max_depth':max_depth,
-<br>
-}
+<br> #max_depth = int(max_depth)
+<br> random_grid = {
+<br> 'n_estimators':n_estimators,
+<br> 'max_depth':max_depth,
+<br> }
 <br>
 
 from sklearn.ensemble import RandomForestRegressor
