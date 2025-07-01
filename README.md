@@ -3,6 +3,7 @@ import warnings
 <br>
 warnings.filterwarnings("ignore")
 
+
 <br>
 import numpy as np
 <br>
@@ -18,11 +19,14 @@ df = pd.read_csv('movie.csv')
 <br>
 df.head()
 
+
 <br>
 df = df.drop(['Unnamed: 0','Name of movie','Year of relase','Description','Director','Star'],axis=1)
 
+
 <br>
 df.head()
+
 
 <br>
 df[df['Metascore'] == '^^^^^^']
@@ -31,8 +35,10 @@ df['Metascore'] = df['Metascore'].replace('^^^^^^','0')
 <br>
 df['Gross collection'] = df['Gross collection'].replace('*****','0')
 
+
 <br>
 df.head()
+
 
 <br>
 cols = df.columns
@@ -42,11 +48,15 @@ cols
 for col in cols:
 <br>
     df[col] = df[col].astype('string') 
+
     
 <br>
 data = df.copy()
+
+
 <br>
 data.head()
+
 
 <br>
 j = 0
@@ -74,6 +84,7 @@ for i in data['Gross collection']:
     #df[i] = df[1:n-1]
 <br>
 data.head()
+
 
 <br>
 j = 0
